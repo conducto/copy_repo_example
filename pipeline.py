@@ -17,15 +17,5 @@ def main() -> co.Parallel:
             """)
     return node
 
-def pr() -> co.Parallel:
-    with co.Serial() as node:
-        node["prep"] = co.Exec("echo what goes here?")
-        node["test"] = main()
-    return node
-
-
-
-
-
 if __name__ == "__main__":
     co.main(default=main)
